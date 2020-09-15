@@ -1,0 +1,24 @@
+<!DOCTYPE html> <html lang='en'> 
+<head> 
+<meta charset='UTF-8' /> 
+<title>timer</title> 
+</head> 
+<body> 
+<span id= "days">00</span>:</span><span id= "hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+<script> 
+const minutes = document.querySelector("#minutes");
+const seconds = document.querySelector("#seconds");
+let count = 0; 
+const renderTimer = () => { 
+count += 1;
+days.innerHTML = Math.floor(count / 86400).toString().padStart(2, "0");
+let shours = Math.floor(count / 3600).toString().padStart(2, "0");
+hours.innerHTML = (shours % 24).toString().padStart(2, "0");
+let smin = Math.floor(count / 60).toString().padStart(2, "0");
+minutes.innerHTML = (smin % 60).toString().padStart(2, "0");
+seconds.innerHTML = (count % 60).toString().padStart(2, "0");
+}
+const timer = setInterval(renderTimer, 1000);
+</script> 
+</body> 
+</html>
